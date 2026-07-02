@@ -6,7 +6,7 @@ export const BLUE = "#eb0b8b";
 export const NAV_LINKS = [
   ["Service", "/services"],
   ["Features", "/features"],
-  ["Pricing", "/pricing"],
+  ["Team", "/team"],
   ["Blog", "/blog"],
   ["Contact us", "/contact"],
 ];

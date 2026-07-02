@@ -84,13 +84,20 @@ export default function ServicesPage() {
               </span>
               <h2 className="mt-5 text-xl font-semibold text-black">{s.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-zinc-500">{s.desc}</p>
-              <ul className="mt-5 flex flex-col gap-2 text-sm text-zinc-700">
+              <ul className="mt-5 flex flex-col gap-2 text-sm text-zinc-700 flex-grow">
                 {s.points.map((p) => (
                   <li key={p} className="flex items-center gap-2">
                     <Check /> {p}
                   </li>
                 ))}
               </ul>
+              <div className="mt-6">
+                <button 
+                  className="rounded-full px-5 py-2 text-sm font-medium border border-[#eb0b8b] text-[#eb0b8b] hover:bg-[#eb0b8b] hover:text-white transition-colors"
+                >
+                  Our previous work
+                </button>
+              </div>
             </div>
           ))}
         </div>

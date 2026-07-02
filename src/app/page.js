@@ -159,9 +159,9 @@ function TeamQuote() {
 /* -------------------------------------------------------------- Stats */
 function Stats() {
   const stats = [
-    ["12", "Year Experience"],
-    ["4,3K", "Total Revenue"],
-    ["40", "Profesional Team"],
+    ["4", "Years Experience"],
+    ["500", "Happy Customers"],
+    ["10", "Professional Teams"],
   ];
   const cards = [
     ["Increase Traffic", "Our expertise will help you to improve visibility in search engine results."],
@@ -382,7 +382,6 @@ export default function Home() {
       <TeamQuote />
       <Stats />
       <Services />
-      <Pricing />
       <Testimonials />
       <CTA />
     </main>

@@ -35,17 +35,33 @@ export default function ContactPage() {
         <div className="flex flex-col justify-center gap-6">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-black">
-              Prefer to reach us directly?
+              Reach us directly
             </h2>
             <p className="mt-2 text-sm text-zinc-500">
-              We&apos;re a small, responsive team. Email works great too.
+              We&apos;re a small, responsive team. Drop by our office or give us a call.
             </p>
           </div>
-          <ul className="flex flex-col gap-3 text-sm text-zinc-700">
-            <li className="flex items-center gap-2"><Check /> hello@artlinemedia.io</li>
-            <li className="flex items-center gap-2"><Check /> Mon–Fri, 9am–6pm</li>
-            <li className="flex items-center gap-2"><Check /> 30 day free trial, no credit card</li>
-          </ul>
+          
+          <div className="flex flex-col gap-2 text-sm text-zinc-700">
+            <p className="font-semibold text-black text-lg">The Artline Media</p>
+            <p><strong>Address:</strong> Vista Avenue Cooperative Housing Society Limited, Sector 34, Kamothe, Panvel, Maharashtra 410209</p>
+            <p><strong>Phone:</strong> 093598 73438</p>
+            <p><strong>Hours:</strong> Closed &middot; Opens 9 am Fri</p>
+          </div>
+
+          {/* map view */}
+          <div className="w-full h-64 sm:h-80 rounded-3xl overflow-hidden border border-zinc-200 shadow-sm">
+            <iframe
+              title="The Artline Media Map"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=The+Artline+Media,+Vista+Avenue+Cooperative+Housing+Society+Limited,+Sector+34,+Kamothe,+Panvel,+Maharashtra+410209&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            ></iframe>
+          </div>
         </div>
       </section>
     </main>
