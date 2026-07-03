@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 
 const SERVICES = [
-  ["Website Design & Development", "Fast, modern sites built to convert", "website,web,design"],
-  ["SEO Ranking", "Climb search results, organically", "seo,analytics,marketing"],
-  ["Videography & Photography", "Visuals that make you look premium", "camera,photography,video"],
-  ["Graphic Designing", "Brand assets that make you stand out", "graphic,design,creative"],
-  ["Ads & Campaign Management", "Campaigns that drive real ROI", "advertising,marketing,campaign"],
-  ["Influencer Marketing", "Reach audiences that already trust", "influencer,content,creator"],
+  ["Website Design & Development", "Fast, modern sites built to convert", "1498050108023-c5249f4df085"],
+  ["SEO Ranking", "Climb search results, organically", "1460925895917-afdab827c52f"],
+  ["Videography & Photography", "Visuals that make you look premium", "1542038784456-1ea8e935640e"],
+  ["Graphic Designing", "Brand assets that make you stand out", "1626785774573-4b799315345d"],
+  ["Ads & Campaign Management", "Campaigns that drive real ROI", "1542744173-8e7e53415bb0"],
+  ["Influencer Marketing", "Reach audiences that already trust", "1611162617474-5b21e879e113"],
 ];
 
 export function HeroCarousel() {
@@ -23,16 +23,15 @@ export function HeroCarousel() {
 
   return (
     <div className="relative h-[320px] overflow-hidden rounded-[22px] sm:h-[600px]">
-      {SERVICES.map(([title, sub, query], i) => (
+      {SERVICES.map(([title, sub, unsplashId], i) => (
         <div
-          key={query}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            i === active ? "opacity-100" : "opacity-0"
-          }`}
+          key={unsplashId}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${i === active ? "opacity-100" : "opacity-0"
+            }`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://loremflickr.com/800/1000/${query}?lock=${i + 1}`}
+            src={`https://images.unsplash.com/photo-${unsplashId}?auto=format&fit=crop&w=1200&q=80`}
             alt={title}
             className="h-full w-full object-cover"
           />
