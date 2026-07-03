@@ -17,6 +17,7 @@ export const SERVICES = [
       "Monthly performance & ROI reporting",
     ],
     photoQuery: "social,media,marketing",
+    image: "/Social%20Media%20Marketing.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <circle cx="6" cy="12" r="2.5" />

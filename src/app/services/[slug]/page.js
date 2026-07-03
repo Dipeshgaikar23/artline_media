@@ -89,7 +89,7 @@ export default async function ServiceDetailPage({ params }) {
         <div className="relative min-h-[320px] overflow-hidden rounded-3xl border border-zinc-200 lg:min-h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://loremflickr.com/900/1100/${service.photoQuery}?lock=2`}
+            src={service.image || `https://loremflickr.com/900/1100/${service.photoQuery}?lock=2`}
             alt={service.title}
             className="h-full w-full object-cover"
           />

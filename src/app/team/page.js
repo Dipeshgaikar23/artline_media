@@ -6,7 +6,7 @@ const teamMembers = [
   { name: "Dipak Kumar Ray", role: "CEO & FOUNDER", image: "/dipak-ray.jpg" },
   { name: "Ankit", role: "GRAPHIC DESIGNER & VIDEO EDITOR", image: "/ankit-ray.jpg" },
   { name: "Sourav Mallik", role: "CONTENT MANAGER & PLANNER", image: "/sourav-mallik.jpg" },
-  { name: "Hassan", role: "VIDEO EDITOR & PHOTOGRAPHER", image: "/hassan.png" },
+  { name: "Hassan", role: "VIDEO EDITOR & PHOTOGRAPHER", image: "/hassan.jpg" },
   { name: "Priya Chaudhary", role: "VOICE ARTIST & SCRIPT WRITER", image: "/priya-chaudhary.jpg" },
   { name: "Anirudha Kolay", role: "DEVELOPER & ANALYST", image: "/anirudha-kolay.jpg" },
   { name: "Dipesh Gaikar", role: "DEVOPS ENGINEER", image: "https://i.pravatar.cc/300?img=17" },
