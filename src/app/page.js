@@ -2,6 +2,7 @@
 import { BLUE, Check } from "@/components/site";
 import { Testimonials } from "@/components/Testimonials";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { EmailForm } from "@/components/EmailForm";
 
 /* --------------------------------------------------------------- Hero */
 function Hero() {
@@ -25,16 +26,11 @@ function Hero() {
             level.
           </p>
 
-          <div className="mt-6 flex max-w-md items-center gap-2 rounded-full bg-[#1c1c1c] p-1.5">
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              className="flex-1 bg-transparent px-4 text-sm text-white outline-none placeholder:text-zinc-500"
-            />
-            <button className="gradient-brand rounded-full px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90">
-              Get Started
-            </button>
-          </div>
+          <EmailForm 
+            theme="dark" 
+            containerClass="mt-6" 
+            buttonClass="gradient-brand transition-opacity hover:opacity-90"
+          />
 
           <div className="mt-5 flex flex-col gap-2 text-sm text-zinc-300">
             <div className="flex items-center gap-2">
@@ -298,16 +294,11 @@ function CTA() {
           <h2 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
             I would like to engage in a conversation regarding your endeavor
           </h2>
-          <div className="mt-8 flex max-w-md items-center gap-2 rounded-full bg-white p-1.5">
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              className="flex-1 bg-transparent px-4 text-sm text-black outline-none placeholder:text-zinc-400"
-            />
-            <button className="rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white">
-              Get Started
-            </button>
-          </div>
+          <EmailForm 
+            theme="light" 
+            containerClass="mt-8" 
+            buttonClass="bg-black" 
+          />
         </div>
         <div className="h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
