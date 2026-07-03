@@ -74,8 +74,7 @@ export default async function ServiceDetailPage({ params }) {
 
           <Link
             href="/contact"
-            className="mt-8 inline-block rounded-full px-6 py-3 text-sm font-medium text-white"
-            style={{ background: BLUE }}
+            className="gradient-brand mt-8 inline-block rounded-full px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
           >
             Get a quote
           </Link>

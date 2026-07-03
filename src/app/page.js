@@ -31,10 +31,7 @@ function Hero() {
               placeholder="Enter your email..."
               className="flex-1 bg-transparent px-4 text-sm text-white outline-none placeholder:text-zinc-500"
             />
-            <button
-              className="rounded-full px-5 py-2.5 text-sm font-medium text-white"
-              style={{ background: BLUE }}
-            >
+            <button className="gradient-brand rounded-full px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90">
               Get Started
             </button>
           </div>
@@ -65,6 +62,7 @@ function Brands() {
     "Kidzee",
     "Commerce Ki paathsaala",
     "Anurag classes",
+    "GrowinFinserv",
     "Flyhigh flysafe",
     "Tripindia",
     "Crocus travel",
@@ -141,9 +139,8 @@ function Stats() {
         <div className="flex gap-10 sm:gap-14">
           {stats.map(([num, label]) => (
             <div key={label}>
-              <p className="text-6xl font-semibold tracking-tight text-black">
-                {num}
-                <span style={{ color: BLUE }}>+</span>
+              <p className="text-gradient-brand w-fit text-6xl font-semibold tracking-tight">
+                {num}+
               </p>
               <p className="mt-1 text-sm text-zinc-500">{label}</p>
             </div>
@@ -296,10 +293,7 @@ function Pricing() {
 function CTA() {
   return (
     <section className="mx-auto max-w-[85rem] px-6 py-4">
-      <div
-        className="grid grid-cols-1 items-center gap-6 overflow-hidden rounded-[28px] md:grid-cols-2"
-        style={{ background: BLUE }}
-      >
+      <div className="gradient-brand grid grid-cols-1 items-center gap-6 overflow-hidden rounded-[28px] md:grid-cols-2">
         <div className="p-10 md:p-14">
           <h2 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
             I would like to engage in a conversation regarding your endeavor

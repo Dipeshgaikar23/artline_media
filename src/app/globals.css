@@ -23,3 +23,15 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Brand gradient (pink → yellow). Solid fill weighted toward pink so white text stays readable. */
+.gradient-brand {
+  background-image: linear-gradient(135deg, #eb0b8b 0%, #eb0b8b 45%, #facc15 100%);
+}
+/* Same gradient clipped to text — works on light and dark backgrounds. */
+.text-gradient-brand {
+  background-image: linear-gradient(120deg, #eb0b8b, #facc15);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

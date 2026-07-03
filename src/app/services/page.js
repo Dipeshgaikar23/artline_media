@@ -102,7 +102,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-[28px] p-10 sm:flex-row" style={{ background: BLUE }}>
+        <div className="gradient-brand mt-12 flex flex-col items-center justify-between gap-6 rounded-[28px] p-10 sm:flex-row">
           <h3 className="max-w-md text-center text-2xl font-semibold text-white sm:text-left">
             Not sure which service fits? Let&apos;s talk it through.
           </h3>
