@@ -1,6 +1,7 @@
 /* Artline Media landing page — static design replica of the provided mockup. */
 import { BLUE, Check } from "@/components/site";
 import { Testimonials } from "@/components/Testimonials";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 /* --------------------------------------------------------------- Hero */
 function Hero() {
@@ -48,60 +49,8 @@ function Hero() {
           </div>
         </div>
 
-        {/* right */}
-        <div className="relative h-[320px] sm:h-[600px]">
-          <div className="h-full overflow-hidden rounded-[22px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
-              alt="Marketing professional"
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          {/* success pill */}
-          <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-medium shadow-lg">
-            <span style={{ color: BLUE }}>✦</span> 99% Success Rate
-          </div>
-
-          {/* revenue card */}
-          <div className="absolute bottom-5 left-5 w-40 rounded-2xl bg-white p-3 shadow-lg">
-            <p className="text-2xl font-semibold text-black">349+</p>
-            <p className="mt-1 text-[10px] leading-tight text-zinc-500">
-              More than 349+ specified client revenue increase
-            </p>
-            <div className="mt-2 flex -space-x-2">
-              {[11, 12, 5, 8].map((n) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={n}
-                  src={`https://i.pravatar.cc/40?img=${n}`}
-                  alt=""
-                  className="h-6 w-6 rounded-full border-2 border-white"
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* chart card */}
-          <div className="absolute bottom-5 right-5 w-36 rounded-2xl bg-white p-3 shadow-lg">
-            <div className="flex items-center justify-between">
-              <p className="text-[11px] font-medium text-black">Statistic Growth</p>
-            </div>
-            <div className="mt-3 flex h-14 items-end gap-1">
-              {[40, 65, 45, 80, 55, 95, 70].map((h, i) => (
-                <span
-                  key={i}
-                  className="flex-1 rounded-sm"
-                  style={{
-                    height: `${h}%`,
-                    background: i === 5 ? BLUE : "#fbcfe8",
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* right — fading service carousel */}
+        <HeroCarousel />
       </div>
     </section>
   );
