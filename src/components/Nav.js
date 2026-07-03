@@ -1,11 +1,21 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo, NAV_LINKS } from "./site";
 import { SERVICES } from "./services-data";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+
+  const linkClass = (href) =>
+    `flex cursor-pointer items-center gap-1 border-b-2 pb-0.5 hover:text-black ${
+      isActive(href) ? "border-[#eb0b8b] text-black" : "border-transparent"
+    }`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -28,7 +38,7 @@ export function Nav() {
           {NAV_LINKS.map(([label, href]) =>
             label === "Services" ? (
               <li key={label} className="group relative">
-                <Link href={href} className="flex cursor-pointer items-center gap-1 hover:text-black">
+                <Link href={href} className={linkClass(href)}>
                   {label}
                   <svg
                     width="12"
@@ -58,7 +68,7 @@ export function Nav() {
               </li>
             ) : (
               <li key={label}>
-                <Link href={href} className="flex cursor-pointer items-center gap-1 hover:text-black">
+                <Link href={href} className={linkClass(href)}>
                   {label}
                 </Link>
               </li>
