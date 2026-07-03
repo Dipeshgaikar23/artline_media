@@ -6,8 +6,8 @@ import { HeroCarousel } from "@/components/HeroCarousel";
 /* --------------------------------------------------------------- Hero */
 function Hero() {
   return (
-    <section className="mx-auto w-full max-w-[85rem] px-6 pb-6">
-      <div className="grid w-full grid-cols-1 gap-6 rounded-[28px] bg-[#0d0d0d] p-6 md:grid-cols-2 md:p-8">
+    <section className="w-full bg-[#0d0d0d]">
+      <div className="mx-auto grid w-full max-w-[85rem] grid-cols-1 gap-6 px-6 py-8 md:grid-cols-2 md:py-10">
         {/* left */}
         <div className="flex flex-col justify-center">
           <h1 className="text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-[42px]">
@@ -59,12 +59,17 @@ function Hero() {
 /* ------------------------------------------------------------- Brands */
 function Brands() {
   const brands = [
-    "Function Junction",
-    "TripIndia",
+    "Jeelo",
+    "Jeeconnect",
+    "Eurokids",
     "Kidzee",
-    "Usha Agency",
-    "CertifyReya",
-    "Tranvlingo",
+    "Commerce Ki paathsaala",
+    "Anurag classes",
+    "Flyhigh flysafe",
+    "Tripindia",
+    "Crocus travel",
+    "TravelinGO",
+    "Divyjyot international school"
   ];
   // Repeat so one half is wider than the viewport, then render two identical
   // halves — the -50% slide loops seamlessly.
