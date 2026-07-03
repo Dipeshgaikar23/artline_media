@@ -86,6 +86,13 @@ export default async function ServiceDetailPage({ params }) {
             ]} />
           )}
 
+          {service.title === "Website Designing & Development" && (
+            <PreviousWorkGallery items={[
+              { type: 'link', title: 'Anurag Classes', src: 'https://classes-topaz.vercel.app' },
+              { type: 'link', title: 'Growin Finserv', src: 'https://growin-finance.vercel.app' }
+            ]} />
+          )}
+
           <Link
             href="/contact"
             className="gradient-brand mt-8 inline-block rounded-full px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"

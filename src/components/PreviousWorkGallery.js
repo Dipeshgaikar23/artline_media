@@ -38,14 +38,24 @@ export function PreviousWorkGallery({ items = [] }) {
                       controls
                       className="w-full rounded-2xl border border-zinc-200 object-cover shadow-sm"
                     />
-                  ) : (
+                  ) : item.type === 'image' ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                       src={item.src}
                       alt={item.title}
                       className="w-full rounded-2xl border border-zinc-200 object-cover shadow-sm"
                     />
-                  )}
+                  ) : item.type === 'link' ? (
+                    <a
+                      href={item.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-40 w-full flex-col items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 px-6 text-center shadow-sm transition-all hover:bg-zinc-100 hover:shadow-md"
+                    >
+                      <span className="text-lg font-semibold text-black">Visit Live Website</span>
+                      <span className="mt-2 text-sm text-zinc-500">{item.src}</span>
+                    </a>
+                  ) : null}
                 </div>
               ))}
             </div>
