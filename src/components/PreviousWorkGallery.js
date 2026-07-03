@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 
-export function PreviousWorkGallery() {
+export function PreviousWorkGallery({ items = [] }) {
   const [open, setOpen] = useState(false);
+
+  if (!items || items.length === 0) return null;
 
   return (
     <>
@@ -26,26 +28,26 @@ export function PreviousWorkGallery() {
             <h3 className="mb-6 text-2xl font-semibold tracking-tight text-black">
               Our Previous Work
             </h3>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {/* Video */}
-              <div className="flex flex-col">
-                <h4 className="mb-3 font-medium text-zinc-700">Video Ad</h4>
-                <video
-                  src="/WhatsApp%20Video%202026-04-17%20at%2012.06.15%20AM.mp4"
-                  controls
-                  className="w-full rounded-2xl border border-zinc-200 object-cover shadow-sm"
-                />
-              </div>
-              {/* Image */}
-              <div className="flex flex-col">
-                <h4 className="mb-3 font-medium text-zinc-700">Jeeconnect App Design</h4>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/jeeconnect-app.jpg"
-                  alt="Jeeconnect App"
-                  className="w-full rounded-2xl border border-zinc-200 object-cover shadow-sm"
-                />
-              </div>
+            <div className={`grid grid-cols-1 gap-8 ${items.length > 1 ? 'md:grid-cols-2' : ''}`}>
+              {items.map((item, idx) => (
+                <div key={idx} className="flex flex-col">
+                  <h4 className="mb-3 font-medium text-zinc-700">{item.title}</h4>
+                  {item.type === 'video' ? (
+                    <video
+                      src={item.src}
+                      controls
+                      className="w-full rounded-2xl border border-zinc-200 object-cover shadow-sm"
+                    />
+                  ) : (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full rounded-2xl border border-zinc-200 object-cover shadow-sm"
+                    />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ export const SERVICES = [
       "Monthly performance & ROI reporting",
     ],
     photoQuery: "social,media,marketing",
-    image: "/Social%20Media%20Marketing.jpg",
+    image: "/social%20media.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <circle cx="6" cy="12" r="2.5" />
@@ -65,6 +65,7 @@ export const SERVICES = [
       "Video editing & post-production",
     ],
     photoQuery: "camera,photography,video",
+    image: "/Social%20Media%20Marketing.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <rect x="3" y="7" width="18" height="12" rx="2" />

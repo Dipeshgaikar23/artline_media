@@ -74,7 +74,16 @@ export default async function ServiceDetailPage({ params }) {
           </ul>
 
           {service.title === "Social Media Marketing" && (
-            <PreviousWorkGallery />
+            <PreviousWorkGallery items={[
+              { type: 'video', title: 'Video Ad', src: '/WhatsApp%20Video%202026-04-17%20at%2012.06.15%20AM.mp4' },
+              { type: 'image', title: 'Jeeconnect App Design', src: '/jeeconnect-app.jpg' }
+            ]} />
+          )}
+
+          {service.title === "Photography & Videography" && (
+            <PreviousWorkGallery items={[
+              { type: 'video', title: 'Photography Reel', src: '/photography.mp4' }
+            ]} />
           )}
 
           <Link
