@@ -66,7 +66,7 @@ export const SERVICES = [
       "Video editing & post-production",
     ],
     photoQuery: "camera,photography,video",
-    image: "/Social%20Media%20Marketing.jpg",
+    image: "/Social%20Media%20Marketing.jpg?v=2",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <rect x="3" y="7" width="18" height="12" rx="2" />
