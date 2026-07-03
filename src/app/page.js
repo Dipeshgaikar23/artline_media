@@ -197,6 +197,26 @@ function Services() {
               We employ ultimate strategic SEO to enhance your website&apos;s ranking
               world wide.
             </p>
+            {s === "Social Media Marketing" && (
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+                <a
+                  href="/WhatsApp%20Video%202026-04-17%20at%2012.06.15%20AM.mp4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90"
+                >
+                  Video Ad
+                </a>
+                <a
+                  href="/jeeconnect-app.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-white transition-opacity hover:opacity-90"
+                >
+                  Jeeconnect App
+                </a>
+              </div>
+            )}
           </div>
         ))}
       </div>

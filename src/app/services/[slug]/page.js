@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BLUE, Check } from "@/components/site";
 import { SERVICES } from "@/components/services-data";
+import { PreviousWorkGallery } from "@/components/PreviousWorkGallery";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -71,6 +72,10 @@ export default async function ServiceDetailPage({ params }) {
               </li>
             ))}
           </ul>
+
+          {service.title === "Social Media Marketing" && (
+            <PreviousWorkGallery />
+          )}
 
           <Link
             href="/contact"
