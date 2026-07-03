@@ -2,12 +2,12 @@
 import { useEffect, useState } from "react";
 
 const SERVICES = [
-  ["Website Design & Development", "Fast, modern sites built to convert", "artline-web"],
-  ["SEO Ranking", "Climb search results, organically", "artline-seo"],
-  ["Videography & Photography", "Visuals that make you look premium", "artline-video"],
-  ["Graphic Designing", "Brand assets that make you stand out", "artline-graphic"],
-  ["Ads & Campaign Management", "Campaigns that drive real ROI", "artline-ads"],
-  ["Influencer Marketing", "Reach audiences that already trust", "artline-influencer"],
+  ["Website Design & Development", "Fast, modern sites built to convert", "website,web,design"],
+  ["SEO Ranking", "Climb search results, organically", "seo,analytics,marketing"],
+  ["Videography & Photography", "Visuals that make you look premium", "camera,photography,video"],
+  ["Graphic Designing", "Brand assets that make you stand out", "graphic,design,creative"],
+  ["Ads & Campaign Management", "Campaigns that drive real ROI", "advertising,marketing,campaign"],
+  ["Influencer Marketing", "Reach audiences that already trust", "influencer,content,creator"],
 ];
 
 export function HeroCarousel() {
@@ -23,16 +23,16 @@ export function HeroCarousel() {
 
   return (
     <div className="relative h-[320px] overflow-hidden rounded-[22px] sm:h-[600px]">
-      {SERVICES.map(([title, sub, seed], i) => (
+      {SERVICES.map(([title, sub, query], i) => (
         <div
-          key={seed}
+          key={query}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             i === active ? "opacity-100" : "opacity-0"
           }`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://picsum.photos/seed/${seed}/800/1000`}
+            src={`https://loremflickr.com/800/1000/${query}?lock=${i + 1}`}
             alt={title}
             className="h-full w-full object-cover"
           />

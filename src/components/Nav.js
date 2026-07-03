@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo, NAV_LINKS } from "./site";
+import { SERVICES } from "./services-data";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,18 +25,45 @@ export function Nav() {
       <nav className="mx-auto flex w-full max-w-[85rem] items-center justify-between px-6 py-1">
         <Logo />
         <ul className="hidden items-center gap-8 text-sm text-zinc-700 md:flex">
-          {NAV_LINKS.map(([label, href]) => (
-            <li key={label}>
-              <Link href={href} className="flex cursor-pointer items-center gap-1 hover:text-black">
-                {label}
-                {label === "Service" && (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          {NAV_LINKS.map(([label, href]) =>
+            label === "Services" ? (
+              <li key={label} className="group relative">
+                <Link href={href} className="flex cursor-pointer items-center gap-1 hover:text-black">
+                  {label}
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="transition-transform duration-200 group-hover:rotate-180"
+                  >
                     <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
-                )}
-              </Link>
-            </li>
-          ))}
+                </Link>
+                {/* dropdown (pt bridges the gap so hover isn't lost) */}
+                <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="rounded-2xl border border-zinc-200 bg-white p-2 shadow-xl">
+                    {SERVICES.map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/services/${s.slug}`}
+                        className="block rounded-xl px-4 py-2.5 hover:bg-zinc-50"
+                      >
+                        <span className="block text-sm font-medium text-black">{s.title}</span>
+                        <span className="mt-0.5 block text-xs text-zinc-500">{s.tagline}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            ) : (
+              <li key={label}>
+                <Link href={href} className="flex cursor-pointer items-center gap-1 hover:text-black">
+                  {label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
         <Link
           href="/contact"

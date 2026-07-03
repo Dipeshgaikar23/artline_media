@@ -4,7 +4,8 @@ import Link from "next/link";
 export const BLUE = "#eb0b8b";
 
 export const NAV_LINKS = [
-  ["Service", "/services"],
+  ["Home", "/"],
+  ["Services", "/services"],
   ["Features", "/features"],
   ["Team", "/team"],
   ["Blog", "/blog"],
