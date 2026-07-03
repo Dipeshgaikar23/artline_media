@@ -38,10 +38,10 @@ function Hero() {
 
           <div className="mt-5 flex flex-col gap-2 text-sm text-zinc-300">
             <div className="flex items-center gap-2">
-              <Check /> 30 day free trial
+              <Check /> Data-driven strategies for exponential brand growth
             </div>
             <div className="flex items-center gap-2">
-              <Check /> There are no credit card requirements
+              <Check /> Premium digital solutions at unbeatable value
             </div>
           </div>
         </div>
@@ -62,12 +62,12 @@ function Brands() {
     "Kidzee",
     "Commerce Ki paathsaala",
     "Anurag classes",
-    "GrowinFinserv",
     "Flyhigh flysafe",
     "Tripindia",
     "Crocus travel",
     "TravelinGO",
-    "Divyjyot international school"
+    "Divyjyot international school",
+    "Growin Finserv",
   ];
   // Repeat so one half is wider than the viewport, then render two identical
   // halves — the -50% slide loops seamlessly.

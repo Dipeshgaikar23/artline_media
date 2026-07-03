@@ -2,35 +2,139 @@
 import { useEffect, useRef } from "react";
 
 const QUOTES = [
+  // Company Reviews
   {
-    text: "As a small business owner, I was initially overwhelmed by the idea of managing our online presence. Partnering with Artline Media was a game-changer for us. They developed a tailored strategy that not only increased our website traffic but also significantly boosted our social media engagement.",
-    name: "Sarah L",
-    role: "CEO of NuHealth",
-    img: 47,
+    text: "Artline Media helped us establish our local presence effectively. Great work!",
+    name: "Management",
+    role: "Jeelo",
+    img: 11,
   },
   {
-    text: "What I appreciate most is their responsiveness and dedication to our success. They are always available to answer questions, and I feel like we have a true partner. I couldn't be happier with the results. I would recommend them to any business looking to grow.",
-    name: "John Lynn",
-    role: "CEO of NuHealth",
+    text: "Outstanding leads for our connectivity solutions! The team is brilliant.",
+    name: "Founder",
+    role: "Jeeconnect",
     img: 12,
   },
   {
-    text: "The team rebuilt our website from scratch and the difference is night and day. It loads faster, looks premium, and our enquiries have gone up every single month since launch.",
-    name: "Priya R",
-    role: "Founder, Bloom Studio",
-    img: 32,
+    text: "They significantly boosted our preschool enrollment through targeted local campaigns.",
+    name: "Center Head",
+    role: "Eurokids",
+    img: 13,
   },
   {
-    text: "Their photography and video work made our brand look like a national player. We finally have visuals we're proud to put in front of clients.",
-    name: "Marcus T",
-    role: "Marketing Lead, Vertex",
+    text: "Excellent social media management that parents love to engage with.",
+    name: "Director",
+    role: "Kidzee",
+    img: 14,
+  },
+  {
+    text: "Their digital marketing strategies brought a surge in student enrollments for our coaching institute.",
+    name: "Admin",
+    role: "Commerce Ki paathsaala",
     img: 15,
   },
   {
-    text: "Handing over our social media was the best decision we made this year. Consistent content, real engagement, and a team that actually understands our audience.",
-    name: "Aisha K",
-    role: "Owner, Saffron Co.",
-    img: 5,
+    text: "Highly professional team. They designed a campaign that perfectly targeted our local students.",
+    name: "Anurag",
+    role: "Anurag classes",
+    img: 16,
+  },
+  {
+    text: "Great visibility boost for our aviation training programs!",
+    name: "Marketing Head",
+    role: "Flyhigh flysafe",
+    img: 17,
+  },
+  {
+    text: "Increased our travel bookings by 40% in just a few months. Highly recommended!",
+    name: "Owner",
+    role: "Tripindia",
+    img: 18,
+  },
+  {
+    text: "A reliable marketing partner for the travel industry. Fantastic results.",
+    name: "Manager",
+    role: "Crocus travel",
+    img: 19,
+  },
+  {
+    text: "Artline Media's campaigns really understand the travel market and user psychology.",
+    name: "Founder",
+    role: "TravelinGO",
+    img: 20,
+  },
+  {
+    text: "Wonderful digital branding that showcases our school's values perfectly.",
+    name: "Principal",
+    role: "Divyjyot international school",
+    img: 21,
+  },
+  {
+    text: "Professional financial marketing that brought us high-quality leads consistently.",
+    name: "Director",
+    role: "Growin Finserv",
+    img: 22,
+  },
+  // Specific User Reviews
+  {
+    text: "The Artline Media Marketing team does a fantastic job with social media management and digital marketing. Their strategies are effective, their designs are creative, and their dedication is impressive. A reliable agency that truly understands how to make a brand stand out!",
+    name: "SAM",
+    role: "5 stars • 7 months ago",
+    img: null,
+  },
+  {
+    text: "👍",
+    name: "My Luck",
+    role: "5 stars • 7 months ago",
+    img: null,
+  },
+  {
+    text: "Artline Media Marketing is one of the best social media marketing agencies I’ve worked with! The team is hardworking, creative, and very professional. They always deliver quality results on time. Highly recommend them for anyone who wants to grow their brand online!",
+    name: "Sachin Kumar",
+    role: "5 stars • 7 months ago",
+    img: null,
+  },
+  {
+    text: "Nice",
+    name: "Suraj Kumar",
+    role: "5 stars • Edited 7 months ago",
+    img: null,
+  },
+  {
+    text: "Hardworking...",
+    name: "A Jain",
+    role: "5 stars • Edited 10 months ago",
+    img: null,
+  },
+  {
+    text: "Professional, reliable, and cost-effective digital marketing solutions. Thank you for the great service!",
+    name: "Roshan Kumar",
+    role: "10 months ago",
+    img: null,
+  },
+  {
+    text: "This platform provides informative videos on the various topics .... amazing experience with this channel. ❤️🙏2",
+    name: "Priya Chaudhary",
+    role: "2 years ago",
+    img: null,
+  },
+  {
+    text: "⭐⭐⭐⭐⭐",
+    name: "Gaurav P",
+    role: "5 stars • 2 years ago",
+    img: null,
+  },
+  {
+    text: "⭐⭐⭐⭐⭐",
+    name: "Ruchi Gupta",
+    role: "5 stars • 2 years ago",
+    img: null,
+  },
+  {
+    text: "⭐⭐⭐⭐⭐",
+    name: "Kundan Rai",
+    role: "5 stars • 2 years ago",
+    img: null,
   },
 ];
 
@@ -93,19 +197,18 @@ export function Testimonials() {
         className="mt-10 flex gap-8 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
         style={{ scrollbarWidth: "none" }}
       >
-        {QUOTES.map((q) => (
+        {QUOTES.map((q, i) => (
           <div
-            key={q.name}
+            key={`${q.name}-${i}`}
             className="shrink-0 basis-full rounded-3xl border border-zinc-200 p-8 md:basis-[calc(50%-1rem)]"
           >
             <p className="text-lg leading-relaxed text-zinc-700">&ldquo;{q.text}&rdquo;</p>
             <div className="mt-6 flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`https://i.pravatar.cc/80?img=${q.img}`}
-                alt={q.name}
-                className="h-10 w-10 rounded-full object-cover"
-              />
+              <svg viewBox="0 0 100 100" className="h-10 w-10 shrink-0">
+                <circle cx="50" cy="50" r="50" fill="#a1a1aa"/>
+                <circle cx="50" cy="38" r="18" fill="#f4f4f5"/>
+                <path d="M50 63C32 63 18 75 16 90C25 96 37 100 50 100C63 100 75 96 84 90C82 75 68 63 50 63Z" fill="#f4f4f5"/>
+              </svg>
               <div>
                 <p className="text-sm font-semibold text-black">{q.name}</p>
                 <p className="text-xs text-zinc-500">{q.role}</p>
