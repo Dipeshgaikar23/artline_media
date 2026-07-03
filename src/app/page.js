@@ -3,12 +3,14 @@ import { BLUE, Check } from "@/components/site";
 import { Testimonials } from "@/components/Testimonials";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { EmailForm } from "@/components/EmailForm";
+import { CursorBackground } from "@/components/CursorBackground";
 
 /* --------------------------------------------------------------- Hero */
 function Hero() {
   return (
-    <section className="w-full bg-[#0d0d0d]">
-      <div className="mx-auto grid w-full max-w-[85rem] grid-cols-1 gap-6 px-6 py-8 md:grid-cols-2 md:py-10">
+    <section className="relative w-full overflow-hidden bg-[#0d0d0d]">
+      <CursorBackground />
+      <div className="relative z-10 mx-auto grid w-full max-w-[85rem] grid-cols-1 gap-6 px-6 py-8 md:grid-cols-2 md:py-10">
         {/* left */}
         <div className="flex flex-col justify-center">
           <h1 className="text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-[42px]">
@@ -26,9 +28,9 @@ function Hero() {
             level.
           </p>
 
-          <EmailForm 
-            theme="dark" 
-            containerClass="mt-6" 
+          <EmailForm
+            theme="dark"
+            containerClass="mt-6"
             buttonClass="gradient-brand transition-opacity hover:opacity-90"
           />
 
