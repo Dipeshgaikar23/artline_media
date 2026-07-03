@@ -43,6 +43,7 @@ export const SERVICES = [
       "Social media creatives, banners & flyers",
     ],
     photoQuery: "website,web,developer",
+    image: "/website%20development.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <rect x="3" y="4" width="18" height="12" rx="2" />
