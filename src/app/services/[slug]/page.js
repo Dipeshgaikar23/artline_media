@@ -30,7 +30,7 @@ export default async function ServiceDetailPage({ params }) {
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`https://loremflickr.com/1600/900/${service.photoQuery}?lock=1`}
+            src={`https://images.unsplash.com/photo-${service.unsplashId}?auto=format&fit=crop&w=1600&q=80`}
             alt={service.title}
             className="h-full w-full object-cover"
           />
@@ -105,7 +105,7 @@ export default async function ServiceDetailPage({ params }) {
         <div className="relative h-[320px] overflow-hidden rounded-3xl border border-zinc-200 lg:h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={service.image || `https://loremflickr.com/900/1100/${service.photoQuery}?lock=2`}
+            src={service.image || `https://images.unsplash.com/photo-${service.unsplashId}?auto=format&fit=crop&w=900&q=80`}
             alt={service.title}
             className="absolute inset-0 h-full w-full object-cover"
           />

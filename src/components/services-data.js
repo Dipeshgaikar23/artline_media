@@ -16,7 +16,7 @@ export const SERVICES = [
       "Influencer sourcing, outreach & collaborations",
       "Monthly performance & ROI reporting",
     ],
-    photoQuery: "social,media,marketing",
+    unsplashId: "1611162617474-5b21e879e113",
     image: "/social%20media.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
@@ -42,8 +42,8 @@ export const SERVICES = [
       "Brand identity & logo design",
       "Social media creatives, banners & flyers",
     ],
-    photoQuery: "website,web,developer",
-    image: "/website%20development.jpg?v=2",
+    unsplashId: "1498050108023-c5249f4df085",
+    image: "/website%20development.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <rect x="3" y="4" width="18" height="12" rx="2" />
@@ -65,8 +65,8 @@ export const SERVICES = [
       "Reels & short-form video",
       "Video editing & post-production",
     ],
-    photoQuery: "camera,photography,video",
-    image: "/Social%20Media%20Marketing.jpg?v=2",
+    unsplashId: "1542038784456-1ea8e935640e",
+    image: "/Social%20Media%20Marketing.jpg",
     icon: (
       <g stroke="currentColor" strokeWidth="1.6" fill="none">
         <rect x="3" y="7" width="18" height="12" rx="2" />
