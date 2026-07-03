@@ -59,7 +59,7 @@ export default async function ServiceDetailPage({ params }) {
 
       {/* content */}
       <section className="mx-auto grid max-w-[85rem] grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2">
-        <div>
+        <div className="lg:pb-4">
           <h2 className="text-2xl font-semibold tracking-tight text-black">What we do</h2>
           <p className="mt-4 leading-relaxed text-zinc-600">{service.desc}</p>
           <p className="mt-4 leading-relaxed text-zinc-600">{service.longDesc}</p>
@@ -102,12 +102,12 @@ export default async function ServiceDetailPage({ params }) {
         </div>
 
         {/* related image */}
-        <div className="relative min-h-[320px] overflow-hidden rounded-3xl border border-zinc-200 lg:min-h-full">
+        <div className="relative h-[320px] overflow-hidden rounded-3xl border border-zinc-200 lg:h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={service.image || `https://loremflickr.com/900/1100/${service.photoQuery}?lock=2`}
             alt={service.title}
-            className="h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
       </section>

@@ -11,7 +11,7 @@ export function PreviousWorkGallery({ items = [] }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="mt-8 mr-3 inline-block rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        className="mt-8 mr-3 inline-block rounded-xl bg-zinc-900 px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
       >
         Our Previous Work
       </button>

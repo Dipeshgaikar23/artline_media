@@ -305,33 +305,7 @@ function Pricing() {
 }
 
 /* ------------------------------------------------------- Testimonials */
-/* ---------------------------------------------------------------- CTA */
-function CTA() {
-  return (
-    <section className="mx-auto max-w-[85rem] px-6 py-4">
-      <div className="gradient-brand grid grid-cols-1 items-center gap-6 overflow-hidden rounded-[28px] md:grid-cols-2">
-        <div className="p-10 md:p-14">
-          <h2 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
-            I would like to engage in a conversation regarding your endeavor
-          </h2>
-          <EmailForm 
-            theme="light" 
-            containerClass="mt-8" 
-            buttonClass="bg-black" 
-          />
-        </div>
-        <div className="h-full">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
-            alt="Client"
-            className="h-full min-h-[300px] w-full object-cover"
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 export default function Home() {
   return (
@@ -342,7 +316,6 @@ export default function Home() {
       <Stats />
       <Services />
       <Testimonials />
-      <CTA />
     </main>
   );
 }
