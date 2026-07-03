@@ -35,3 +35,25 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+/* Artistic Loader Animation */
+@keyframes drawArtline {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes glowArtline {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(235, 11, 139, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(250, 204, 21, 0.7));
+  }
+}
+.animate-artline {
+  stroke-dasharray: 400;
+  animation: drawArtline 3s cubic-bezier(0.4, 0, 0.2, 1) infinite, glowArtline 3s ease-in-out infinite;
+}
