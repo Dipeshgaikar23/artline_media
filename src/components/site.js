@@ -175,9 +175,9 @@ export function Footer() {
       <div className="mx-auto flex max-w-[85rem] flex-col items-center justify-between gap-4 border-t border-zinc-200 px-6 py-6 text-sm text-zinc-500 sm:flex-row">
         <p>All rights reserved by Artline Media.</p>
         <div className="flex gap-8">
-          <span className="cursor-pointer hover:text-black">Privacy Policy</span>
-          <span className="cursor-pointer hover:text-black">Terms of Service</span>
-          <span className="cursor-pointer hover:text-black">Cookies</span>
+          <Link href="/privacy" className="hover:text-black">Privacy Policy</Link>
+          <Link href="/privacy#terms" className="hover:text-black">Terms of Service</Link>
+          <Link href="/privacy#cookies" className="hover:text-black">Cookies</Link>
         </div>
       </div>
     </footer>
