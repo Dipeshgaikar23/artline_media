@@ -5,6 +5,7 @@ export const BLUE = "#eb0b8b";
 
 export const NAV_LINKS = [
   ["Home", "/"],
+  ["About", "/about"],
   ["Services", "/services"],
   ["Features", "/features"],
   ["Team", "/team"],
