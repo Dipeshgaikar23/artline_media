@@ -13,8 +13,7 @@ export function Nav() {
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   const linkClass = (href) =>
-    `flex cursor-pointer items-center gap-1 border-b-2 pb-0.5 hover:text-black ${
-      isActive(href) ? "border-[#eb0b8b] text-black" : "border-transparent"
+    `flex cursor-pointer items-center gap-1 border-b-2 pb-0.5 hover:text-black ${isActive(href) ? "border-[#eb0b8b] text-black" : "border-transparent"
     }`;
 
   useEffect(() => {
@@ -26,11 +25,10 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
           ? "border-b border-black/5 bg-white/70 shadow-sm backdrop-blur-lg backdrop-saturate-150"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="mx-auto flex w-full max-w-[85rem] items-center justify-between px-6 py-1">
         <Logo />
@@ -38,7 +36,7 @@ export function Nav() {
           {NAV_LINKS.map(([label, href]) =>
             label === "Services" ? (
               <li key={label} className="group relative">
-                <Link href={href} className={linkClass(href)}>
+                <button type="button" className={linkClass(href)}>
                   {label}
                   <svg
                     width="12"
@@ -49,7 +47,7 @@ export function Nav() {
                   >
                     <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
-                </Link>
+                </button>
                 {/* dropdown (pt bridges the gap so hover isn't lost) */}
                 <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                   <div className="rounded-2xl border border-zinc-200 bg-white p-2 shadow-xl">
