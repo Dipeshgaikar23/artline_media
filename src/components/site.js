@@ -8,7 +8,6 @@ export const NAV_LINKS = [
   ["About", "/about"],
   ["Services", "/services"],
   ["Features", "/features"],
-  ["Team", "/team"],
   ["Blog", "/blog"],
   ["Contact us", "/contact"],
 ];
