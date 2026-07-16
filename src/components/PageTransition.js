@@ -9,12 +9,12 @@ import { usePathname, useRouter } from "next/navigation";
 
 const LABELS = {
   "/": "Home",
-  "/about": "About",
-  "/services": "Services",
+  "/about": "Who we are",
+  "/services": "What we offer",
   "/features": "Features",
-  "/blog": "Blog",
-  "/contact": "Contact",
-  "/privacy": "Privacy",
+  "/blog": "Something new",
+  "/contact": "Let's Talk",
+  "/privacy": "Privacy Policy",
 };
 
 function labelFor(pathname) {
@@ -45,6 +45,7 @@ export function PageTransition() {
       e.preventDefault();
       e.stopPropagation();
       window.__pageTransitioning = true; // tell Reveals to hold until the curtain lifts
+      window.dispatchEvent(new Event("routechangestart")); // e.g. close the mobile menu
       setLabel(labelFor(url.pathname));
       setPending(url.pathname + url.search + url.hash);
       setPhase("cover");
@@ -82,7 +83,7 @@ export function PageTransition() {
       className={`page-transition gradient-brand ${phase === "cover" ? "pt-cover" : "pt-uncover"}`}
       onAnimationEnd={onAnimEnd}
     >
-      <span className="pt-label text-6xl font-extrabold uppercase tracking-tight text-white sm:text-8xl">
+      <span className="pt-label px-6 text-center text-6xl font-extrabold uppercase tracking-tight text-white sm:text-8xl">
         {label}
       </span>
     </div>
