@@ -2,7 +2,7 @@
 import { BLUE } from "@/components/site";
 
 const inputClass =
-  "w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-black outline-none placeholder:text-zinc-400 focus:border-zinc-400";
+  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 transition-colors focus:border-[#eb0b8b]";
 
 export function ContactForm() {
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 rounded-3xl border border-zinc-200 p-8">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <input name="name" className={inputClass} type="text" placeholder="Full name" required />
         <input name="email" className={inputClass} type="email" placeholder="Email address" required />
@@ -35,7 +35,7 @@ export function ContactForm() {
       <textarea name="help" className={inputClass} rows={5} placeholder="How can we help?" required />
       <button
         type="submit"
-        className="mt-2 rounded-full px-6 py-3 text-sm font-medium text-white"
+        className="mt-2 rounded-full px-6 py-3 text-sm font-medium text-white transition-transform hover:scale-[1.02] active:scale-95"
         style={{ background: BLUE }}
       >
         Send message

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-export function CursorBackground() {
+// Tunable knobs (px / 0-1). Override from layout.js, e.g. <CursorBackground size={220} blur={60} opacity={0.5} />
+export function CursorBackground({ size = 320, blur = 70, opacity = 0.40 }) {
     const blobRef = useRef(null);
 
     useEffect(() => {
@@ -51,11 +52,11 @@ export function CursorBackground() {
     }, []);
 
     return (
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#0d0d0d]">
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#0d0d0d]">
 
             {/* Deep Magenta / Pink Aurora */}
             <div
-                className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] rounded-full mix-blend-screen opacity-[0.45] filter blur-[100px]"
+                className="animate-drift-a absolute -top-[10%] -left-[10%] w-[70%] h-[70%] rounded-full mix-blend-screen opacity-[0.45] filter blur-[100px]"
                 style={{
                     background: `radial-gradient(circle, #eb0b8b, transparent 65%)`,
                 }}
@@ -63,7 +64,7 @@ export function CursorBackground() {
 
             {/* Warm Yellow / Orange Aurora */}
             <div
-                className="absolute top-[20%] -right-[15%] w-[70%] h-[80%] rounded-full mix-blend-screen opacity-[0.4] filter blur-[120px]"
+                className="animate-drift-b absolute top-[20%] -right-[15%] w-[70%] h-[80%] rounded-full mix-blend-screen opacity-[0.4] filter blur-[120px]"
                 style={{
                     background: `radial-gradient(circle, #ffae00, transparent 65%)`,
                 }}
@@ -72,8 +73,12 @@ export function CursorBackground() {
             {/* Soft interactive cursor blob (Pinkish-magenta) */}
             <div
                 ref={blobRef}
-                className="absolute w-[500px] h-[500px] rounded-full mix-blend-screen opacity-[0.6] filter blur-[90px] transition-opacity duration-300"
+                className="absolute rounded-full mix-blend-screen transition-opacity duration-300"
                 style={{
+                    width: size,
+                    height: size,
+                    opacity: opacity,
+                    filter: `blur(${blur}px)`,
                     background: `radial-gradient(circle, #ff416c, transparent 65%)`,
                     left: "-1000px",
                     top: "-1000px",

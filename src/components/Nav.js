@@ -13,7 +13,7 @@ export function Nav() {
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   const linkClass = (href) =>
-    `flex cursor-pointer items-center gap-1 border-b-2 pb-0.5 hover:text-black ${isActive(href) ? "border-[#eb0b8b] text-black" : "border-transparent"
+    `flex cursor-pointer items-center gap-1 border-b-2 pb-0.5 transition-colors hover:text-white ${isActive(href) ? "border-[#eb0b8b] text-white" : "border-transparent"
     }`;
 
   useEffect(() => {
@@ -26,13 +26,13 @@ export function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
-          ? "border-b border-black/5 bg-white/70 shadow-sm backdrop-blur-lg backdrop-saturate-150"
+          ? "border-b border-white/10 bg-[#0d0d0d]/70 shadow-lg backdrop-blur-lg backdrop-saturate-150"
           : "bg-transparent"
         }`}
     >
       <nav className="mx-auto flex w-full max-w-[85rem] items-center justify-between px-6 py-1">
         <Logo />
-        <ul className="hidden items-center gap-8 text-sm text-zinc-700 md:flex">
+        <ul className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
           {NAV_LINKS.map(([label, href]) =>
             label === "Services" ? (
               <li key={label} className="group relative">
@@ -50,15 +50,15 @@ export function Nav() {
                 </button>
                 {/* dropdown (pt bridges the gap so hover isn't lost) */}
                 <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                  <div className="rounded-2xl border border-zinc-200 bg-white p-2 shadow-xl">
+                  <div className="rounded-2xl border border-white/10 bg-[#141414] p-2 shadow-xl">
                     {SERVICES.map((s) => (
                       <Link
                         key={s.slug}
                         href={`/services/${s.slug}`}
-                        className="block rounded-xl px-4 py-2.5 hover:bg-zinc-50"
+                        className="block rounded-xl px-4 py-2.5 transition-colors hover:bg-white/5"
                       >
-                        <span className="block text-sm font-medium text-black">{s.title}</span>
-                        <span className="mt-0.5 block text-xs text-zinc-500">{s.tagline}</span>
+                        <span className="block text-sm font-medium text-white">{s.title}</span>
+                        <span className="mt-0.5 block text-xs text-zinc-400">{s.tagline}</span>
                       </Link>
                     ))}
                   </div>

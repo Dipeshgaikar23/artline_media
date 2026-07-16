@@ -203,21 +203,22 @@ export function Testimonials() {
   return (
     <section className="mx-auto max-w-[85rem] px-6 py-16">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
           What client says
         </h2>
         <div className="flex gap-2">
           <button
             aria-label="Previous"
             onClick={() => go(indexRef.current - 1)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-300 text-black hover:bg-zinc-50"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-all hover:scale-105 hover:bg-white/10"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
           <button
             aria-label="Next"
             onClick={() => go(indexRef.current + 1)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-white transition-all hover:scale-105"
+            style={{ background: "#eb0b8b" }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
@@ -234,7 +235,7 @@ export function Testimonials() {
         {PROCESSED_QUOTES.map((q, i) => (
           <div
             key={`${q.name}-${i}`}
-            className="shrink-0 flex flex-col justify-between basis-full rounded-3xl border border-zinc-200 p-8 md:basis-[calc(50%-1rem)]"
+            className="card-glow shrink-0 flex flex-col justify-between basis-full rounded-3xl p-8 md:basis-[calc(50%-1rem)]"
           >
             <div>
               <div className="flex gap-1 mb-4">
@@ -242,7 +243,7 @@ export function Testimonials() {
                   <StarIcon key={starIdx} filled={starIdx < q.stars} />
                 ))}
               </div>
-              <p className="text-lg leading-relaxed text-zinc-700">&ldquo;{q.text}&rdquo;</p>
+              <p className="text-lg leading-relaxed text-zinc-300">&ldquo;{q.text}&rdquo;</p>
             </div>
             <div className="mt-6 flex items-center gap-3">
               <svg viewBox="0 0 100 100" className="h-10 w-10 shrink-0">
@@ -251,8 +252,8 @@ export function Testimonials() {
                 <path d="M50 63C32 63 18 75 16 90C25 96 37 100 50 100C63 100 75 96 84 90C82 75 68 63 50 63Z" fill="#f4f4f5" />
               </svg>
               <div>
-                <p className="text-sm font-semibold text-black">{q.name}</p>
-                <p className="text-xs text-zinc-500">{q.role}</p>
+                <p className="text-sm font-semibold text-white">{q.name}</p>
+                <p className="text-xs text-zinc-400">{q.role}</p>
               </div>
             </div>
           </div>

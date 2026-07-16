@@ -6,9 +6,39 @@
 }
 
 body {
-  background: #ffffff;
-  color: #0a0a0a;
+  background: #0d0d0d;
+  color: #fafafa;
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+/* Glass surface with pink hover lift — reused by every card grid on the dark theme. */
+.card-glow {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-glow:hover {
+  transform: translateY(-4px);
+  border-color: rgba(235, 11, 139, 0.5);
+  box-shadow: 0 12px 40px rgba(235, 11, 139, 0.18);
+}
+
+/* Slow-drifting aurora blobs — makes the global cursor background feel alive. */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.12); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, -6%) scale(1.1); }
+}
+.animate-drift-a { animation: drift-a 18s ease-in-out infinite; }
+.animate-drift-b { animation: drift-b 22s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift-a, .animate-drift-b, .animate-marquee { animation: none; }
+  .card-glow { transition: none; }
 }
 
 /* Endless brand ribbon: track holds two identical halves, slide by 50%. */

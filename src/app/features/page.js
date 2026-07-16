@@ -14,7 +14,7 @@ const FEATURES = [
 
 export default function FeaturesPage() {
   return (
-    <main className="bg-white">
+    <main>
       <PageHeader
         title="Features that do the heavy lifting"
         subtitle="Everything Artline Media gives your team to bring in visitors and increase sales."
@@ -22,7 +22,7 @@ export default function FeaturesPage() {
       <section className="mx-auto max-w-[85rem] px-6 pb-16 pt-6">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map(([title, desc]) => (
-            <div key={title} className="rounded-2xl bg-zinc-50 p-6">
+            <div key={title} className="card-glow rounded-2xl p-6">
               <span
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-white"
                 style={{ background: BLUE }}
@@ -31,8 +31,8 @@ export default function FeaturesPage() {
                   <path d="M5 12l4.5 4.5L19 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              <h3 className="mt-4 font-semibold text-black">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-500">{desc}</p>
+              <h3 className="mt-4 font-semibold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{desc}</p>
             </div>
           ))}
         </div>

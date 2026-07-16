@@ -24,7 +24,7 @@ export default async function ServiceDetailPage({ params }) {
   if (!service) notFound();
 
   return (
-    <main className="bg-white">
+    <main>
       {/* hero with background image */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -60,12 +60,12 @@ export default async function ServiceDetailPage({ params }) {
       {/* content */}
       <section className="mx-auto grid max-w-[85rem] grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2">
         <div className="lg:pb-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-black">What we do</h2>
-          <p className="mt-4 leading-relaxed text-zinc-600">{service.desc}</p>
-          <p className="mt-4 leading-relaxed text-zinc-600">{service.longDesc}</p>
+          <h2 className="text-2xl font-semibold tracking-tight text-white">What we do</h2>
+          <p className="mt-4 leading-relaxed text-zinc-300">{service.desc}</p>
+          <p className="mt-4 leading-relaxed text-zinc-300">{service.longDesc}</p>
 
-          <h3 className="mt-8 text-lg font-semibold text-black">What&apos;s included</h3>
-          <ul className="mt-4 flex flex-col gap-3 text-sm text-zinc-700">
+          <h3 className="mt-8 text-lg font-semibold text-white">What&apos;s included</h3>
+          <ul className="mt-4 flex flex-col gap-3 text-sm text-zinc-300">
             {service.includes.map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <Check /> {item}
@@ -102,7 +102,7 @@ export default async function ServiceDetailPage({ params }) {
         </div>
 
         {/* related image */}
-        <div className="relative h-[320px] overflow-hidden rounded-3xl border border-zinc-200 lg:h-full">
+        <div className="relative h-[320px] overflow-hidden rounded-3xl border border-white/10 lg:h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={service.image || `https://images.unsplash.com/photo-${service.unsplashId}?auto=format&fit=crop&w=900&q=80`}
@@ -114,13 +114,13 @@ export default async function ServiceDetailPage({ params }) {
 
       {/* other services */}
       <section className="mx-auto max-w-[85rem] px-6 pb-20">
-        <h3 className="text-lg font-semibold text-black">Explore other services</h3>
+        <h3 className="text-lg font-semibold text-white">Explore other services</h3>
         <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.filter((s) => s.slug !== service.slug).map((s) => (
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="group flex items-center gap-4 rounded-2xl border border-zinc-200 p-5 hover:border-zinc-300 hover:shadow-sm"
+              className="card-glow group flex items-center gap-4 rounded-2xl p-5"
             >
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white"
@@ -128,7 +128,7 @@ export default async function ServiceDetailPage({ params }) {
               >
                 <svg width="22" height="22" viewBox="0 0 24 24">{s.icon}</svg>
               </span>
-              <span className="text-sm font-medium text-black group-hover:underline">
+              <span className="text-sm font-medium text-white group-hover:underline">
                 {s.title}
               </span>
             </Link>

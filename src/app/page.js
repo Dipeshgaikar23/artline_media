@@ -3,13 +3,12 @@ import { BLUE, Check } from "@/components/site";
 import { Testimonials } from "@/components/Testimonials";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { EmailForm } from "@/components/EmailForm";
-import { CursorBackground } from "@/components/CursorBackground";
+import { CountUp } from "@/components/CountUp";
 
 /* --------------------------------------------------------------- Hero */
 function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#0d0d0d]">
-      <CursorBackground />
+    <section className="relative w-full overflow-hidden">
       <div className="relative z-10 mx-auto grid w-full max-w-[85rem] grid-cols-1 gap-6 px-6 py-8 md:grid-cols-2 md:py-10">
         {/* left */}
         <div className="flex flex-col justify-center">
@@ -81,7 +80,7 @@ function Brands() {
             {[...half, ...half].map((b, i) => (
               <span
                 key={i}
-                className="mx-6 whitespace-nowrap text-xl font-semibold tracking-tight text-zinc-800"
+                className="mx-6 whitespace-nowrap text-xl font-semibold tracking-tight text-zinc-500 transition-colors hover:text-white"
               >
                 {b}
               </span>
@@ -97,7 +96,7 @@ function Brands() {
 function TeamQuote() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-20 text-center">
-      <p className="text-2xl font-medium leading-[1.5] tracking-tight text-black sm:text-[32px]">
+      <p className="text-2xl font-medium leading-[1.5] tracking-tight text-white sm:text-[32px]">
         Our flexible team 👩🏻👩🏽👩🏼 has a wide range of skills, which lets us look
         at projects from a complete point of view that combines creativity 🎨 and
         usefulness ✨.
@@ -127,10 +126,10 @@ function Stats() {
     <section className="mx-auto max-w-[85rem] px-6 py-8">
       <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="max-w-xs text-2xl font-semibold tracking-tight text-black">
+          <h2 className="max-w-xs text-2xl font-semibold tracking-tight text-white">
             Bring in targeted visitors and increase sales.
           </h2>
-          <button className="mt-5 rounded-full border border-zinc-300 px-5 py-2 text-sm font-medium text-black hover:bg-zinc-50">
+          <button className="mt-5 rounded-full border border-white/20 px-5 py-2 text-sm font-medium text-white transition-all hover:scale-[1.03] hover:bg-white/10 active:scale-95">
             Contact Us
           </button>
         </div>
@@ -138,9 +137,9 @@ function Stats() {
           {stats.map(([num, label]) => (
             <div key={label}>
               <p className="text-gradient-brand w-fit text-6xl font-semibold tracking-tight">
-                {num}+
+                <CountUp end={parseInt(num, 10)} suffix="+" />
               </p>
-              <p className="mt-1 text-sm text-zinc-500">{label}</p>
+              <p className="mt-1 text-sm text-zinc-400">{label}</p>
             </div>
           ))}
         </div>
@@ -148,12 +147,12 @@ function Stats() {
 
       <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
         {cards.map(([title, desc], i) => (
-          <div key={title} className="rounded-2xl bg-zinc-50 p-6">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-black shadow-sm">
+          <div key={title} className="card-glow rounded-2xl p-6">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white">
               <svg width="20" height="20" viewBox="0 0 24 24">{icons[i]}</svg>
             </span>
-            <h3 className="mt-4 font-semibold text-black">{title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-500">{desc}</p>
+            <h3 className="mt-4 font-semibold text-white">{title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-zinc-400">{desc}</p>
           </div>
         ))}
       </div>
@@ -184,18 +183,18 @@ function Services() {
   };
   return (
     <section className="mx-auto max-w-[85rem] px-6 py-16">
-      <h2 className="mx-auto max-w-lg text-center text-3xl font-semibold tracking-tight text-black sm:text-4xl">
+      <h2 className="mx-auto max-w-lg text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">
         We provide our customer the finest service available
       </h2>
 
-      <div className="mt-14 grid grid-cols-1 border-l border-t border-zinc-200 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid grid-cols-1 border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s, i) => (
-          <div key={s} className="border-b border-r border-zinc-200 p-8 text-center">
-            <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-zinc-100 text-black">
+          <div key={s} className="group border-b border-r border-white/10 p-8 text-center transition-colors hover:bg-white/5">
+            <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-transform duration-300 group-hover:scale-110 group-hover:bg-[#eb0b8b]">
               {icon(i)}
             </span>
-            <h3 className="mt-4 font-semibold text-black">{s}</h3>
-            <p className="mx-auto mt-2 max-w-[220px] text-sm leading-relaxed text-zinc-500">
+            <h3 className="mt-4 font-semibold text-white">{s}</h3>
+            <p className="mx-auto mt-2 max-w-[220px] text-sm leading-relaxed text-zinc-400">
               We employ ultimate strategic SEO to enhance your website&apos;s ranking
               world wide.
             </p>
@@ -232,7 +231,7 @@ function BlueCheckFeature({ children }) {
 function Pricing() {
   return (
     <section className="mx-auto max-w-[85rem] px-6 py-4">
-      <div className="rounded-[28px] bg-[#0d0d0d] px-6 py-16 md:px-14">
+      <div className="rounded-[28px] border border-white/10 bg-white/5 px-6 py-16 backdrop-blur-sm md:px-14">
         <h2 className="text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl">
           Simple and Flexible Pricing
         </h2>
@@ -243,7 +242,7 @@ function Pricing() {
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Standard */}
-          <div className="rounded-3xl border border-zinc-800 bg-[#141414] p-8">
+          <div className="rounded-3xl border border-white/10 bg-[#141414] p-8 transition-transform duration-300 hover:-translate-y-1">
             <h3 className="text-xl font-semibold text-white">Standard Plan</h3>
             <p className="mt-1 text-sm text-zinc-400">
               Team collaboration for any business
@@ -256,14 +255,14 @@ function Pricing() {
             </ul>
             <div className="mt-8 flex items-center justify-between">
               <p className="text-4xl font-semibold text-white">$30.99</p>
-              <button className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black">
+              <button className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition-transform hover:scale-[1.03] active:scale-95">
                 Start Free Trial
               </button>
             </div>
           </div>
 
           {/* Business */}
-          <div className="rounded-3xl p-8" style={{ background: BLUE }}>
+          <div className="rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-1" style={{ background: BLUE }}>
             <h3 className="text-xl font-semibold text-white">Business Plan</h3>
             <p className="mt-1 text-sm text-pink-100">
               Team collaboration for any business
@@ -276,7 +275,7 @@ function Pricing() {
             </ul>
             <div className="mt-8 flex items-center justify-between">
               <p className="text-4xl font-semibold text-white">$99.99</p>
-              <button className="rounded-full bg-white px-5 py-2.5 text-sm font-medium" style={{ color: BLUE }}>
+              <button className="rounded-full bg-white px-5 py-2.5 text-sm font-medium transition-transform hover:scale-[1.03] active:scale-95" style={{ color: BLUE }}>
                 Start Free Trial
               </button>
             </div>
@@ -292,7 +291,7 @@ function Pricing() {
 
 export default function Home() {
   return (
-    <main className="bg-white">
+    <main>
       <Hero />
       <Brands />
       <TeamQuote />

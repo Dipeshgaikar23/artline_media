@@ -3,6 +3,7 @@ import "./globals.css";
 import { Footer } from "@/components/site";
 import { Nav } from "@/components/Nav";
 import { ScrollTop } from "@/components/ScrollTop";
+import { CursorBackground } from "@/components/CursorBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,7 +29,8 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} ${instrumentSerif.variable} antialiased`}
     >
-      <body className="bg-white">
+      <body className="bg-[#0d0d0d] text-white">
+        <CursorBackground />
         <Nav />
         {/* spacer for the fixed nav (~logo h-19 + py-1 ≈ 84px) */}
         <div className="pt-[84px]">{children}</div>

@@ -1,5 +1,4 @@
 import { BLUE } from "@/components/site";
-import { CursorBackground } from "@/components/CursorBackground";
 
 export const metadata = { title: "About Us — Artline Media" };
 
@@ -14,8 +13,7 @@ const teamMembers = [
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen bg-[#050505] text-white overflow-hidden flex flex-col pt-24 lg:pt-0">
-      <CursorBackground />
+    <main className="relative min-h-screen text-white overflow-hidden flex flex-col pt-24 lg:pt-0">
       {/* Background glow effects to match the image's dark space aesthetic */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#eb0b8b]/10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#f9a826]/10 blur-[150px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3" />
