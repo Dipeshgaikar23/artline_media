@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/site";
+import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 import { POSTS } from "./data";
 
@@ -11,6 +12,7 @@ export default function BlogPage() {
         title="The Artline Media Blog"
         subtitle="Insights, ideas, and strategies to help you grow your business online."
       />
+      <Reveal>
       <section className="mx-auto max-w-[85rem] px-6 pb-24 pt-12">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {POSTS.map((post, i) => (
@@ -40,6 +42,7 @@ export default function BlogPage() {
           ))}
         </div>
       </section>
+      </Reveal>
     </main>
   );
 }

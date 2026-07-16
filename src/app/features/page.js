@@ -1,5 +1,6 @@
 /* Features page. */
 import { BLUE, PageHeader } from "@/components/site";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata = { title: "Features — Artline Media" };
 
@@ -19,6 +20,7 @@ export default function FeaturesPage() {
         title="Features that do the heavy lifting"
         subtitle="Everything Artline Media gives your team to bring in visitors and increase sales."
       />
+      <Reveal>
       <section className="mx-auto max-w-[85rem] px-6 pb-16 pt-6">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map(([title, desc]) => (
@@ -37,6 +39,7 @@ export default function FeaturesPage() {
           ))}
         </div>
       </section>
+      </Reveal>
     </main>
   );
 }

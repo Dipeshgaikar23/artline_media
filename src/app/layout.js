@@ -4,6 +4,7 @@ import { Footer } from "@/components/site";
 import { Nav } from "@/components/Nav";
 import { ScrollTop } from "@/components/ScrollTop";
 import { CursorBackground } from "@/components/CursorBackground";
+import { PageTransition } from "@/components/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-[#0d0d0d] text-white">
         <CursorBackground />
+        <PageTransition />
         <Nav />
         {/* spacer for the fixed nav (~logo h-19 + py-1 ≈ 84px) */}
         <div className="pt-[84px]">{children}</div>

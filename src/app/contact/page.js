@@ -1,6 +1,7 @@
 /* Contact page. */
 import { PageHeader } from "@/components/site";
 import { ContactForm } from "@/components/ContactForm";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata = { title: "Contact — Artline Media" };
 
@@ -11,6 +12,7 @@ export default function ContactPage() {
         title="Let's start a conversation"
         subtitle="Tell us about your endeavor and we'll get back to you within one business day."
       />
+      <Reveal>
       <section className="mx-auto grid max-w-[85rem] grid-cols-1 gap-10 px-6 pb-20 pt-6 lg:grid-cols-2">
         {/* form */}
         <ContactForm />
@@ -48,6 +50,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      </Reveal>
     </main>
   );
 }

@@ -1,6 +1,7 @@
 /* Services page — the four core offerings. */
 import Link from "next/link";
 import { BLUE, Check } from "@/components/site";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
   title: "Services — Artline Media",
@@ -69,6 +70,7 @@ export default function ServicesPage() {
         </p>
       </section>
 
+      <Reveal>
       <section className="mx-auto max-w-[85rem] px-6 pb-16 pt-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {SERVICES.map((s) => (
@@ -115,6 +117,7 @@ export default function ServicesPage() {
           </Link>
         </div>
       </section>
+      </Reveal>
     </main>
   );
 }

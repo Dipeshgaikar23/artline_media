@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BLUE, Check } from "@/components/site";
 import { SERVICES } from "@/components/services-data";
 import { PreviousWorkGallery } from "@/components/PreviousWorkGallery";
+import { Reveal } from "@/components/Reveal";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -58,7 +59,7 @@ export default async function ServiceDetailPage({ params }) {
       </section>
 
       {/* content */}
-      <section className="mx-auto grid max-w-[85rem] grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2">
+      <Reveal as="section" className="mx-auto grid max-w-[85rem] grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2">
         <div className="lg:pb-4">
           <h2 className="text-2xl font-semibold tracking-tight text-white">What we do</h2>
           <p className="mt-4 leading-relaxed text-zinc-300">{service.desc}</p>
@@ -110,10 +111,10 @@ export default async function ServiceDetailPage({ params }) {
             className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
-      </section>
+      </Reveal>
 
       {/* other services */}
-      <section className="mx-auto max-w-[85rem] px-6 pb-20">
+      <Reveal as="section" className="mx-auto max-w-[85rem] px-6 pb-20">
         <h3 className="text-lg font-semibold text-white">Explore other services</h3>
         <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.filter((s) => s.slug !== service.slug).map((s) => (
@@ -134,7 +135,7 @@ export default async function ServiceDetailPage({ params }) {
             </Link>
           ))}
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

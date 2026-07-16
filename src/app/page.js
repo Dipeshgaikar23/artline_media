@@ -4,6 +4,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { EmailForm } from "@/components/EmailForm";
 import { CountUp } from "@/components/CountUp";
+import { Reveal } from "@/components/Reveal";
 
 /* --------------------------------------------------------------- Hero */
 function Hero() {
@@ -292,12 +293,12 @@ function Pricing() {
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Brands />
-      <TeamQuote />
-      <Stats />
-      <Services />
-      <Testimonials />
+      <Reveal><Hero /></Reveal>
+      <Reveal><Brands /></Reveal>
+      <Reveal><TeamQuote /></Reveal>
+      <Reveal><Stats /></Reveal>
+      <Reveal><Services /></Reveal>
+      <Reveal><Testimonials /></Reveal>
     </main>
   );
 }

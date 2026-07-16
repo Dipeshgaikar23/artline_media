@@ -1,4 +1,5 @@
 import { BLUE } from "@/components/site";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata = { title: "About Us — Artline Media" };
 
@@ -92,7 +93,7 @@ export default function AboutPage() {
       </div>
 
       {/* Team Section */}
-      <div className="relative z-10 max-w-[85rem] w-full mx-auto px-6 flex flex-col items-center text-center pb-24 lg:pt-16">
+      <Reveal className="relative z-10 max-w-[85rem] w-full mx-auto px-6 flex flex-col items-center text-center pb-24 lg:pt-16">
         {/* Badge */}
         <div
           className="px-4 py-1.5 rounded-full border border-[#eb0b8b]/30 bg-[#eb0b8b]/10 text-[10px] sm:text-xs font-semibold tracking-widest mb-6"
@@ -132,7 +133,7 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </main>
   );
 }

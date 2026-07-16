@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/site";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata = { title: "Privacy Policy — Artline Media" };
 
@@ -10,7 +11,7 @@ export default function PrivacyPage() {
         subtitle="Last Updated: January 2026"
       />
 
-      <div className="mx-auto max-w-[48rem] px-6 pb-24 pt-12">
+      <Reveal className="mx-auto max-w-[48rem] px-6 pb-24 pt-12">
         <section id="privacy" className="text-zinc-300 leading-relaxed space-y-6 text-lg">
           <p>At The Artline Media, we value your privacy. We collect basic personal information such as your name, email address, phone number, and website usage data only to communicate with you, provide our services, and improve our website experience.</p>
           <p>We do not sell, rent, or misuse your personal information. Data may be shared only with trusted service providers or when legally required.</p>
@@ -35,7 +36,7 @@ export default function PrivacyPage() {
           <p>Cookies do not collect personal information. You can disable cookies anytime through your browser settings.</p>
           <p>By continuing to use our website, you consent to the use of cookies.</p>
         </section>
-      </div>
+      </Reveal>
     </main>
   );
 }
